@@ -1,0 +1,78 @@
+.registration{
+  padding-top: 100px;
+  background:   rgba(176, 234, 238, 0.944);
+  height: 100vh;
+}
+
+.imgholder h2{
+  color: blue;
+}
+.main{
+  display: flex;
+  min-height: 100vh;
+}
+.left{
+  width: 20%;
+}
+.right{
+  width: 80%;
+}
+.sidebar {
+  background: rgba(112, 247, 229, 0.944);
+  height: auto; 
+  min-height: 100vh; 
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  padding: 20px;
+}
+
+.imgholder {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.menu-list {
+  flex-grow: 1;           
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; 
+}
+
+.menu-list .list-group-item {
+  background: rgba(244, 247, 248, 0.921);
+  border: none;
+  padding: 12px 15px;
+  margin-bottom: 5px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+.menu-list .list-group-item a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.menu-list .list-group-item:hover {
+  background:rgba(185, 13, 13, 0.986);
+  
+}
+
+.logout-button {
+  background-color: #1226dd;
+  color: white;
+}
+
+.logout-button:hover {
+  background-color: #0b07f8;
+  transform: scale(1.05);
+  
+}
+
+
+
+
+
+ 
