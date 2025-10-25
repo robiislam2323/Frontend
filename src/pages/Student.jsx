@@ -21,7 +21,7 @@ const Student = () => {
 
   const handleClose = () => {
     setloading(true);
-    axios.post("http://localhost:8000/creatstudent", {
+    axios.post("https://backend-q4r1.onrender.com/creatstudent", {
       studentname: studentname,
       departmentname: departmentname,
       studentid: studentid,
@@ -30,7 +30,7 @@ const Student = () => {
         setloading(false);
         setShow(false);
         setUpdate(false);
-        axios.get("http://localhost:8000/allstudent")
+        axios.get("https://backend-q4r1.onrender.com/allstudent")
           .then((data) => setstudentList(data.data))
           .catch((err) => console.log(err));
       })
@@ -43,7 +43,7 @@ const Student = () => {
   const handleCloseForUpdate = () => {
     console.log(studentObjectId)
     setloading(true);
-    axios.patch(`http://localhost:8000/student/${studentObjectId}`, {
+    axios.patch(`https://backend-q4r1.onrender.com/student/${studentObjectId}`, {
       studentname: studentname,
       departmentname: departmentname,
       studentid: studentid,
@@ -52,7 +52,7 @@ const Student = () => {
         setloading(false);
         setShow(false);
         setUpdate(false);
-        axios.get("http://localhost:8000/allstudent")
+        axios.get("https://backend-q4r1.onrender.com/allstudent")
           .then((data) => setstudentList(data.data))
           .catch((err) => console.log(err));
       })
@@ -72,7 +72,7 @@ const Student = () => {
 
   const handleShowModal = (id) => {
     setUpdate(true)
-    axios.get(`http://localhost:8000/student/${id}`).then((data)=>{
+    axios.get(`https://backend-q4r1.onrender.com/student/${id}`).then((data)=>{
       console.log(data.data[0])
       setdepartmentname(data.data[0].departmentname) 
       setstudentid(data.data[0].studentid) 
@@ -94,7 +94,7 @@ const Student = () => {
   }, [navigate]);
 
   useEffect(() => {
-    axios.get("http://localhost:8000/allstudent")
+    axios.get("https://backend-q4r1.onrender.com/allstudent")
       .then((data) => {
         setstudentList(data.data);
       })
@@ -103,9 +103,9 @@ const Student = () => {
 
    let handleDelete = async (id) => {
     try {
-      await axios.post("http://localhost:8000/delete", { id }); 
+      await axios.post("https://backend-q4r1.onrender.com/delete", { id }); 
       
-      const { data } = await axios.get("http://localhost:8000/allstudent");
+      const { data } = await axios.get("https://backend-q4r1.onrender.com/allstudent");
       setstudentList(data); 
     } catch (err) {
       console.log(err);

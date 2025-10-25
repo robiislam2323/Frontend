@@ -22,7 +22,7 @@ const Teacher = () => {
   const handleClose = () => {
 
     setloading(true);
-    axios.post("http://localhost:8000/creatteacher", {
+    axios.post("https://backend-q4r1.onrender.com/creatteacher", {
       teachername: teachername,
       departmentname: departmentname,
       phonenumber: phonenumber,
@@ -33,7 +33,7 @@ const Teacher = () => {
         setloading(false);
         setShow(false);
         setUpdate(false);
-        axios.get("http://localhost:8000/allteacher")
+        axios.get("https://backend-q4r1.onrender.com/allteacher")
           .then((data) => setteacherList(data.data))
           .catch((err) => console.log(err));
       })
@@ -47,7 +47,7 @@ const Teacher = () => {
   const handleCloseForUpdate = () => {
     console.log(teacherObjectId);
     setloading(true);
-    axios.patch(`http://localhost:8000/teacher/${teacherObjectId}`, {
+    axios.patch(`https://backend-q4r1.onrender.com/teacher/${teacherObjectId}`, {
       teachername: teachername,
       departmentname: departmentname,
       phonenumber: phonenumber,
@@ -56,7 +56,7 @@ const Teacher = () => {
         setloading(false);
         setShow(false);
         setUpdate(false);
-        axios.get("http://localhost:8000/allteacher")
+        axios.get("https://backend-q4r1.onrender.com/allteacher")
           .then((data) => setteacherList(data.data))
           .catch((err) => console.log(err));
       })
@@ -77,7 +77,7 @@ const Teacher = () => {
 
   const handleShowModal = (id) => {
     setUpdate(true);
-    axios.get(`http://localhost:8000/teacher/${id}`).then((data) => {
+    axios.get(`https://backend-q4r1.onrender.com/teacher/${id}`).then((data) => {
       console.log(data.data[0]);
       setdepartmentname(data.data[0].departmentname);
       setphonenumber(data.data[0].phonenumber);
@@ -96,7 +96,7 @@ const Teacher = () => {
 
 
   useEffect(() => {
-    axios.get("http://localhost:8000/allteacher")
+    axios.get("https://backend-q4r1.onrender.com/allteacher")
       .then((data) => setteacherList(data.data))
       .catch((err) => console.log(err));
   }, []);
@@ -105,8 +105,8 @@ const Teacher = () => {
 
   let handleDelete = async (id) => {
     try {
-      await axios.post("http://localhost:8000/deleteTeacher", { id });
-      const { data } = await axios.get("http://localhost:8000/allteacher");
+      await axios.post("https://backend-q4r1.onrender.com/deleteTeacher", { id });
+      const { data } = await axios.get("https://backend-q4r1.onrender.com/allteacher");
       setteacherList(data);
     } catch (err) {
       console.log(err);

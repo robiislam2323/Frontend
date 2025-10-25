@@ -22,7 +22,7 @@ const PDF = () => {
 
     axios
       .post(
-        "http://localhost:8000/uploadbook",
+        "https://backend-q4r1.onrender.com/uploadbook",
         {
           name: name,
           department: department,
@@ -37,7 +37,7 @@ const PDF = () => {
         }
       )
       .then(() => {
-        axios.get("http://localhost:8000/allbook").then((data) => {
+        axios.get("https://backend-q4r1.onrender.com/allbook").then((data) => {
           setBookslist(data.data);
         });
       })
@@ -59,7 +59,7 @@ const PDF = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:8000/allbook")
+      .get("https://backend-q4r1.onrender.com/allbook")
       .then((data) => {
         setBookslist(data.data);
       })
@@ -158,7 +158,7 @@ const PDF = () => {
                 <td>
                   <Button
                     variant="success"as={Link}
-                    to={`http://localhost:8000/${item.url}`}target="_blank"rel="#" >Read
+                    to={`https://backend-q4r1.onrender.com/${item.url}`}target="_blank"rel="#" >Read
                   </Button>
                 </td>
               </tr>

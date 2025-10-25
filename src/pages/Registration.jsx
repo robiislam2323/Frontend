@@ -52,7 +52,7 @@ const Registration = () => {
             setPasswordError("Password required")
         }
         if(userName && email && password){
-          axios.post("http://localhost:8000/registration",{
+          axios.post("https://backend-q4r1.onrender.com/registration",{
             username: userName,
             email: email,
             password: password
