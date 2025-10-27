@@ -4,6 +4,7 @@ import Teacher from "./pages/Teacher";
 import Student from "./pages/Student";
 import Login from "./pages/Login";
 import PDF from "./pages/PDF"; 
+import Leave from "./pages/Leave";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
     <Route path="/teacher" element={<Teacher/>}/>
     <Route path="/student" element={<Student/>}/>
     <Route path="/pdf" element={<PDF/>}/>
+    <Route path="/leave" element={<Leave/>}/>
   </Routes>
 </>   
   )
